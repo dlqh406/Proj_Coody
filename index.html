@@ -10,67 +10,96 @@
   <script defer src="./query.js"></script>
 
   <body>
-    <form action="">
+    <form action="" method="GET">
       <div>
         <label for="productName"> 상품 명 : </label>
         <input type="text" id="productName" />
       </div>
       <div>
-        <label for="">사이즈 옵션 개수</label>
-        <select name="prodNum" id="prodNum">
-          <option value="1">1개 (원사이즈)</option>
+        <label for="">사이즈 옵션 입력</label>
+        <select name="countSize" id="countSize"> 
+          <option value="0">선택하세요</option>
+          <option value="1">1개</option>
           <option value="2">2개</option>
           <option value="3">3개</option>
           <option value="4">4개</option>
           <option value="5">5개</option>
           <option value="6">6개</option>
+          <option value="7">7개</option>
         </select>
+        <div class="belowSize" >
+        </div>
       </div>
       <div>
-            <label for="descriptionSize" class="blowDes"> 실측사이즈 작성:  </label><br> 
-          
+        <label for="">색상 옵션 입력</label>
+        <select name="countColor" id="countColor"> 
+          <option value="0">선택하세요</option>
+          <option value="1">1개</option>
+          <option value="2">2개</option>
+          <option value="3">3개</option>
+          <option value="4">4개</option>
+          <option value="5">5개</option>
+          <option value="6">6개</option>
+          <option value="7">7개</option>
+          <option value="8">8개</option>
+          <option value="9">9개</option>
+          <option value="10">10개</option>
+          <option value="11">11개</option>
+          <option value="12">12개</option>
+          <option value="13">13개</option>
+          <option value="14">14개</option>
+          <option value="15">15개</option>
+          <option value="16">16개</option>
+          <option value="17">17개</option>
+          <option value="18">18개</option>
+          <option value="19">19개</option>
+          <option value="20">20개</option>
+        </select>
+        <div class="belowColor" >
+        </div>
+         
 
-    
-   
       </div>
+
         <div>
           <label for="one-dayDelivery"> 당일배송 가능여부 : </label>
-          <input type="radio" id="one-dayDelivery" name="deli_chk" /> 가능
-          <input type="radio" id="one-dayDelivery" name="deli_chk" /> 불가능
+          <input type="radio" id="one-dayDelivery" name="onedaydeli_can" /> 가능
+          <input type="radio" id="one-dayDelivery" name="onedaydeli_cant" /> 불가능
          
         </div>
         <div>
             <label for=""> 상세페이지 이미지:</label>
-            <input type="file">
-        </div
+            <input type="file" name="introProduct_img">
+        </div>
         <div>
+
             <label for=""> 분석 이미지:</label>
-            <input type="file">
+            <input type="file" name="analysis_img">
         </div>
         <dir style="display:flex; margin:0px; padding: 0px">
             <div>
                 <label for="">Style</label>
                 <select name="StyleList" id="">
-                    <option value="">오피스룩</option>
-                    <option value="">로맨틱</option>
-                    <option value="">에스레저</option>
-                    <option value="">캐주얼</option>
+                    <option value="오피스룩">오피스룩</option>
+                    <option value="로맨틱">로맨틱</option>
+                    <option value="에스레저">에스레저</option>
+                    <option value="캐주얼">캐주얼</option>
                 </select>
             </div>
             <div>
                 <label for="">type</label>
                 <select name="StyleList" id="">
-                    <option value="">원피스</option>
-                    <option value="">자켓</option>
-                    <option value="">카디컨</option>
-                    <option value="">바지</option>
-                    <option value="">브라우스</option>
+                    <option value="원피스">원피스</option>
+                    <option value="자켓">자켓</option>
+                    <option value="카디컨">카디컨</option>
+                    <option value="바지">바지</option>
+                    <option value="브라우스">브라우스</option>
                 </select>
             </div>
 
         </dir>
-    
       </div>
+      <input type="submit">
     </form>
   </body>
 </html>
