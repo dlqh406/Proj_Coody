@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coody | product registration</title>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <script defer src="./query.js"></script>
+
+  <body>
+    <form action="">
+      <div>
+        <label for="productName"> 상품 명 : </label>
+        <input type="text" id="productName" />
+      </div>
+      <div>
+        <label for="">사이즈 옵션 개수</label>
+        <select name="prodNum" id="prodNum">
+          <option value="1">1개 (원사이즈)</option>
+          <option value="2">2개</option>
+          <option value="3">3개</option>
+          <option value="4">4개</option>
+          <option value="5">5개</option>
+          <option value="6">6개</option>
+        </select>
+      </div>
+      <div>
+            <label for="descriptionSize" class="blowDes"> 실측사이즈 작성:  </label><br> 
+          
+
+    
+   
+      </div>
+        <div>
+          <label for="one-dayDelivery"> 당일배송 가능여부 : </label>
+          <input type="radio" id="one-dayDelivery" name="deli_chk" /> 가능
+          <input type="radio" id="one-dayDelivery" name="deli_chk" /> 불가능
+         
+        </div>
+        <div>
+            <label for=""> 상세페이지 이미지:</label>
+            <input type="file">
+        </div
+        <div>
+            <label for=""> 분석 이미지:</label>
+            <input type="file">
+        </div>
+        <dir style="display:flex; margin:0px; padding: 0px">
+            <div>
+                <label for="">Style</label>
+                <select name="StyleList" id="">
+                    <option value="">오피스룩</option>
+                    <option value="">로맨틱</option>
+                    <option value="">에스레저</option>
+                    <option value="">캐주얼</option>
+                </select>
+            </div>
+            <div>
+                <label for="">type</label>
+                <select name="StyleList" id="">
+                    <option value="">원피스</option>
+                    <option value="">자켓</option>
+                    <option value="">카디컨</option>
+                    <option value="">바지</option>
+                    <option value="">브라우스</option>
+                </select>
+            </div>
+
+        </dir>
+    
+      </div>
+    </form>
+  </body>
+</html>
