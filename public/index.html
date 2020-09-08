@@ -68,14 +68,16 @@
       <input type="radio" id="one-dayDelivery" name="onedaydeli_cant" /> 불가능
     </div>
     <br>
-    <div>
+    <div id="belowDetail">
       <label for=""> 상세페이지 이미지:</label>
       <input type="file" name="detail_img" id="detail_img">
+      <button type="button" onclick="create_detailUrl()">상세페이지 저장</button>
     </div>
     <br>
-    <div>
-      <label for=""> 썸네일 이미지(대표이미지):</label>
-      <input type="file" name="thumbnail_img">
+    <div id="belowthumnail">
+      <label for="" > 썸네일 이미지(대표이미지):</label>
+      <input type="file" name="thumbnail_img" id="thumbnail_img">
+      <button type="button" onclick="create_thumbnailUrl()">썸네일 저장</button>
     </div>
     <br>
     <dir style="display:flex; margin:0px; padding: 0px">
@@ -106,7 +108,7 @@
   </form>
 
   <button type="submit" onclick="">이미지 업로드</button>
-  <button type="submit" onclick="postProdToFireStore()">파이어스토어</button>
+  <button type="submit" onclick="postToFirStore()">파이어스토어</button>
 
 
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
