@@ -70,7 +70,7 @@
     <br>
     <div>
       <label for=""> 상세페이지 이미지:</label>
-      <input type="file" name="introProduct_img">
+      <input type="file" name="introProduct_img" id="introProduct_img">
     </div>
     <br>
     <div>
@@ -102,13 +102,17 @@
     </dir>
     </div>
     <br>
-    <input type="submit" onclick="postProdToFireStore()">
+   
   </form>
+
+  <button type="submit" onclick="">이미지 업로드</button>
   <button type="submit" onclick="postProdToFireStore()">파이어스토어</button>
 
 
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+  
   <script defer src="./asset/init.js"></script>
   <script defer src="./asset/query.js"></script>
   <script defer src="./asset/fireStore.js"></script>
