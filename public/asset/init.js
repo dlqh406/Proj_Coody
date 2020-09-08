@@ -1,6 +1,3 @@
-{
-    /* <script src = "https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js" > < /script> */ }
-
 var firebaseConfig = {
     apiKey: "AIzaSyBodqh4USRajllSX4N5zablI-0iDlASBaQ",
     authDomain: "coody-f21eb.firebaseapp.com",
@@ -11,3 +8,6 @@ var firebaseConfig = {
     appId: "1:999637295786:web:142317dd74293ad78b66d3"
 };
 firebase.initializeApp(firebaseConfig);
+// const firebase = require("firebase");
+// Required for side-effects
+// require("firebase/firestore");
