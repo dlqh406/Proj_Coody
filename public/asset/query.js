@@ -7,12 +7,12 @@ $("#countSize").change(function () {
   $(".belowSize").html("");
   for (var i = 0; i < deNum; i++) {
     $(".belowSize").append(
-      ' <ul><input type="text" name="size' +
+      ' <ul><input type="text" id="size' +
         i +
         '" placeholder="사이즈입력 예시)free,small,medium,22,23">' +
-        '<input type="text" name="sizeDes' +
+        '<input type="text" id="sizeDes' +
         i +
-        '" placeholder="실측사이즈 입력 예시)어깨 , 가슴 , 총기장 , 팔길이 ">' +
+        '"  placeholder="실측사이즈 입력 예시)어깨 , 가슴 , 총기장 , 팔길이 ">' +
         "</ul>"
     );
   }
@@ -25,9 +25,9 @@ $("#countColor").change(function () {
   $(".belowColor").html("");
   for (var i = 0; i < deNum; i++) {
     $(".belowColor").append(
-      ' <ul><input type="text" name="color' +
+      ' <ul><input type="text" id="color' +
         i +
-        '" placeholder="컬러입력 예시)차골">' +
+        '"placeholder="컬러입력 예시)차골">' +
         "</ul>"
     );
   }

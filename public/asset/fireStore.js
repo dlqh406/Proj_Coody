@@ -1,6 +1,14 @@
 imgList = [];
 
 function postToFirStore() {
+  var sizeList = [];
+
+  // for (var i=0; i<7; i++){
+  //   if($("#size"+i).val()=undefined){
+  //     console.log($("#size"+i).val())
+  //   }
+  // }
+
   if (!imgList[1]) {
     alert("첨부한 이미지의 저장버튼을 누르세요");
   } else {
@@ -8,27 +16,75 @@ function postToFirStore() {
     //   if (user) { else면 로그인 페이지로 이동
     console.log("post To FireStore start");
 
-    var d = new Date();
-    firebase.firestore().collection("postProduct").add({
-      // productName:
-      // thumbnail_img:
-      // introProduct_img:
-      // sizeList:
-      // sizeDetail:
-      // colorList:
-      // ODD_can:
-      // StyleList:
-      // TypeList:
-      // uploadDate:
+    var _uploadDate = new Date();
 
-      first: "Alan",
-      middle: d,
-      last: "Turing",
-      born: 1912,
-      detail_img: imgList[1],
-      thumbnail_img: imgList[0],
-    });
+    firebase
+      .firestore()
+      .collection("postProduct")
+      .add({
+        productName: $("#productName").val(),
+        thumbnail_img: imgList[0],
+        detail_img: imgList[1],
+        ODD_can: $("#onedaydeli_can").is(":checked"),
+        uploadDate: _uploadDate,
+        sizeList: {
+          size0:
+            typeof $("#size0").val() == "undefined" ? null : $("#size0").val(),
+          size1:
+            typeof $("#size1").val() == "undefined" ? null : $("#size1").val(),
+          size2:
+            typeof $("#size2").val() == "undefined" ? null : $("#size2").val(),
+          size3:
+            typeof $("#size3").val() == "undefined" ? null : $("#size3").val(),
+          size4:
+            typeof $("#size4").val() == "undefined" ? null : $("#size4").val(),
+          size5:
+            typeof $("#size5").val() == "undefined" ? null : $("#size5").val(),
+          size6:
+            typeof $("#size6").val() == "undefined" ? null : $("#size6").val(),
+        },
+        sizeDesList: {
+          sizeDes0:
+            typeof $("#sizeDes0").val() == "undefined"
+              ? null
+              : $("#sizeDes0").val(),
+          sizeDes1:
+            typeof $("#sizeDes1").val() == "undefined"
+              ? null
+              : $("#sizeDes1").val(),
+          sizeDes2:
+            typeof $("#sizeDes2").val() == "undefined"
+              ? null
+              : $("#sizeDes2").val(),
+          sizeDes3:
+            typeof $("#sizeDes3").val() == "undefined"
+              ? null
+              : $("#sizeDes3").val(),
+          sizeDes4:
+            typeof $("#sizeDes4").val() == "undefined"
+              ? null
+              : $("#sizeDes4").val(),
+          sizeDes5:
+            typeof $("#sizeDes5").val() == "undefined"
+              ? null
+              : $("#sizeDes5").val(),
+          sizeDes6:
+            typeof $("#sizeDes6").val() == "undefined"
+              ? null
+              : $("#sizeDes6").val(),
+        },
+        style: {
+          product_Style: $("#StyleList option:selected").val(),
+        },
+        category: {
+          product_category: $("#category option:selected").val(),
+        },
+
+        // StyleList:
+        // TypeList:
+      });
   }
+  console.log("uploade completed");
 }
 
 function create_detailUrl() {
