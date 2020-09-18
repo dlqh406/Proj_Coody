@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AutoML Image classification demo</title>
+    <style></style>
+  </head>
+
+  <body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-automl"></script> -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs-automl"></script>
+    <img id="daisy" crossorigin="anonymous" src="./13.jpg" />
+    <script>
+      //   import * as automl from "@tensorflow/tfjs-automl";
+      async function run() {
+        var modelURL = "./model.json";
+        const model = await tf.automl.loadImageClassification(modelURL);
+        const img = document.getElementById("daisy");
+        const options = { score: 0.5, iou: 0.5, topk: 20 };
+        const predictions = await model.classify(img, options);
+        console.log(predictions);
+        // Show the resulting object on the page.
+        const pre = document.createElement("pre");
+        pre.textContent = JSON.stringify(predictions, null, 2);
+        document.body.append(pre);
+      }
+      run();
+    </script>
+  </body>
+</html>

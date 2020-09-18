@@ -27,58 +27,42 @@ function postToFirStore() {
         detail_img: imgList[1],
         ODD_can: $("#onedaydeli_can").is(":checked"),
         uploadDate: _uploadDate,
-        sizeList: {
-          size0:
-            typeof $("#size0").val() == "undefined" ? null : $("#size0").val(),
-          size1:
-            typeof $("#size1").val() == "undefined" ? null : $("#size1").val(),
-          size2:
-            typeof $("#size2").val() == "undefined" ? null : $("#size2").val(),
-          size3:
-            typeof $("#size3").val() == "undefined" ? null : $("#size3").val(),
-          size4:
-            typeof $("#size4").val() == "undefined" ? null : $("#size4").val(),
-          size5:
-            typeof $("#size5").val() == "undefined" ? null : $("#size5").val(),
-          size6:
-            typeof $("#size6").val() == "undefined" ? null : $("#size6").val(),
-        },
-        sizeDesList: {
-          sizeDes0:
-            typeof $("#sizeDes0").val() == "undefined"
-              ? null
-              : $("#sizeDes0").val(),
-          sizeDes1:
-            typeof $("#sizeDes1").val() == "undefined"
-              ? null
-              : $("#sizeDes1").val(),
-          sizeDes2:
-            typeof $("#sizeDes2").val() == "undefined"
-              ? null
-              : $("#sizeDes2").val(),
-          sizeDes3:
-            typeof $("#sizeDes3").val() == "undefined"
-              ? null
-              : $("#sizeDes3").val(),
-          sizeDes4:
-            typeof $("#sizeDes4").val() == "undefined"
-              ? null
-              : $("#sizeDes4").val(),
-          sizeDes5:
-            typeof $("#sizeDes5").val() == "undefined"
-              ? null
-              : $("#sizeDes5").val(),
-          sizeDes6:
-            typeof $("#sizeDes6").val() == "undefined"
-              ? null
-              : $("#sizeDes6").val(),
-        },
-        style: {
-          product_Style: $("#StyleList option:selected").val(),
-        },
-        category: {
-          product_category: $("#category option:selected").val(),
-        },
+
+        sizeList: [
+          typeof $("#size0").val() == "undefined" ? null : $("#size0").val(),
+          typeof $("#size1").val() == "undefined" ? null : $("#size1").val(),
+          typeof $("#size2").val() == "undefined" ? null : $("#size2").val(),
+          typeof $("#size3").val() == "undefined" ? null : $("#size3").val(),
+          typeof $("#size4").val() == "undefined" ? null : $("#size4").val(),
+          typeof $("#size5").val() == "undefined" ? null : $("#size5").val(),
+          typeof $("#size6").val() == "undefined" ? null : $("#size6").val(),
+        ],
+        sizeDesList: [
+          typeof $("#sizeDes0").val() == "undefined"
+            ? null
+            : $("#sizeDes0").val(),
+          typeof $("#sizeDes1").val() == "undefined"
+            ? null
+            : $("#sizeDes1").val(),
+          typeof $("#sizeDes2").val() == "undefined"
+            ? null
+            : $("#sizeDes2").val(),
+          typeof $("#sizeDes3").val() == "undefined"
+            ? null
+            : $("#sizeDes3").val(),
+          typeof $("#sizeDes4").val() == "undefined"
+            ? null
+            : $("#sizeDes4").val(),
+          typeof $("#sizeDes5").val() == "undefined"
+            ? null
+            : $("#sizeDes5").val(),
+          typeof $("#sizeDes6").val() == "undefined"
+            ? null
+            : $("#sizeDes6").val(),
+        ],
+        style: $("#StyleList option:selected").val(),
+
+        category: $("#category option:selected").val(),
 
         // StyleList:
         // TypeList:
