@@ -20,7 +20,7 @@ function postToFirStore() {
 
     firebase
       .firestore()
-      .collection("postProduct")
+      .collection("uploaded_product")
       .add({
         productName: $("#productName").val(),
         thumbnail_img: imgList[0],
@@ -61,7 +61,6 @@ function postToFirStore() {
             : $("#sizeDes6").val(),
         ],
         style: $("#StyleList option:selected").val(),
-
         category: $("#category option:selected").val(),
 
         // StyleList:
