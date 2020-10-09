@@ -15,6 +15,8 @@ function postToFirStore() {
     //   var user = firebase.auth().currentUser;
     //   if (user) { else면 로그인 페이지로 이동
     console.log("post To FireStore start");
+    var _tep = quill.root.innerHTML;
+    var _resultQuill = _tep.replace(/<br>/gi, "");
 
     var _uploadDate = new Date();
 
@@ -27,6 +29,7 @@ function postToFirStore() {
         detail_img: imgList[1],
         ODD_can: $("#onedaydeli_can").is(":checked"),
         uploadDate: _uploadDate,
+        productDecription: _resultQuill,
 
         sizeList: [
           typeof $("#size0").val() == "undefined" ? null : $("#size0").val(),

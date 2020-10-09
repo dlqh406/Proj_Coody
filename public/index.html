@@ -7,11 +7,13 @@
   <title>Coody | product registration</title>
   <script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./asset/main.css" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 </head>
 
 
 <body>
-  <form action="">
+  <form method="POST" action="">
     <div>
       <label for="productName"> 상품 명 : </label>
       <input type="text" id="productName"/>
@@ -68,18 +70,6 @@
       <input type="radio" id="onedaydeli_cant" name="onedaydeli_cant" /> 불가능
     </div>
     <br>
-    <div id="belowDetail">
-      <label for=""> 상세페이지 이미지:</label>
-      <input type="file" name="detail_img" id="detail_img">
-      <button type="button" onclick="create_detailUrl()">상세페이지 저장</button>
-    </div>
-    <br>
-    <div id="belowthumnail">
-      <label for="" > 썸네일 이미지(대표이미지):</label>
-      <input type="file" name="thumbnail_img" id="thumbnail_img">
-      <button type="button" onclick="create_thumbnailUrl()">썸네일 저장</button>
-    </div>
-    <br>
     <dir style="display:flex; margin:0px; padding: 0px">
       <div>
         <label for="">Style</label>
@@ -100,16 +90,62 @@
           <option value="브라우스">브라우스</option>
         </select>
       </div>
-
     </dir>
+    <br>
+    <div id="belowthumnail">
+      <label for="" > 썸네일 이미지(대표이미지):</label>
+      <input type="file" name="thumbnail_img" id="thumbnail_img">
+      <button type="button" onclick="create_thumbnailUrl()">썸네일 저장</button>
     </div>
     <br>
+    <div id="belowDetail">
+      <label for=""> 상세페이지 이미지:</label>
+      <input type="file" name="detail_img" id="detail_img">
+      <button type="button" onclick="create_detailUrl()">상세페이지 저장</button>
+    </div>
+    <br>
+    <br>
+   
+    </div>
+    <br>
+ 
+    <div id="editor">
+      <p>  상품 소개,상품 상세사이즈를 작성해주세요 </p>
+      <p><br></p>
+    </div>
+    <input type="button" onclick="aaa()" id="quill-html">
+
+
+
+
    
   </form>
 
   <button type="submit" onclick="">이미지 업로드</button>
   <button type="submit" onclick="postToFirStore()">파이어스토어</button>
 
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <!-- Initialize Quill editor -->
+  <script>
+    var quill = new Quill('#editor', {
+      modules: {
+    toolbar: [
+      ['bold', 'italic', 'underline'],
+    ]
+  },
+
+      theme: 'snow'
+    });
+  </script>
+<script>
+    function aaa(){
+      var html = quill.root.innerHTML;
+      var result = html.replace( /<br>/gi, '');
+      console.log(html)
+    console.log(result);
+    }
+</script>
 
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
