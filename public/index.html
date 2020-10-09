@@ -91,20 +91,14 @@
         </select>
       </div>
     </dir>
-    <br>
+    <br> <br> <br>
     <div id="belowthumnail">
       <label for="" > 썸네일 이미지(대표이미지):</label>
       <input type="file" name="thumbnail_img" id="thumbnail_img">
       <button type="button" onclick="create_thumbnailUrl()">썸네일 저장</button>
     </div>
     <br>
-    <div id="belowDetail">
-      <label for=""> 상세페이지 이미지:</label>
-      <input type="file" name="detail_img" id="detail_img">
-      <button type="button" onclick="create_detailUrl()">상세페이지 저장</button>
-    </div>
-    <br>
-    <br>
+  
    
     </div>
     <br>
@@ -113,15 +107,14 @@
       <p>  상품 소개,상품 상세사이즈를 작성해주세요 </p>
       <p><br></p>
     </div>
-    <input type="button" onclick="aaa()" id="quill-html">
-
-
-
-
-   
+    <br>
+    <div id="belowDetail">
+      <label for=""> 상세페이지 이미지:</label>
+      <input type="file" name="detail_img" id="detail_img">
+      <button type="button" onclick="create_detailUrl()">상세페이지 저장</button>
+    </div>
   </form>
-
-  <button type="submit" onclick="">이미지 업로드</button>
+  <br> <br>
   <button type="submit" onclick="postToFirStore()">파이어스토어</button>
 
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
@@ -138,21 +131,12 @@
       theme: 'snow'
     });
   </script>
-<script>
-    function aaa(){
-      var html = quill.root.innerHTML;
-      var result = html.replace( /<br>/gi, '');
-      console.log(html)
-    console.log(result);
-    }
-</script>
 
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
   
   <script defer src="./asset/init.js"></script>
-  <script defer src="./asset/query.js"></script>
   <script defer src="./asset/fireStore.js"></script>
 </body>
 
