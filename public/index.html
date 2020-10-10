@@ -9,6 +9,12 @@
   <link rel="stylesheet" type="text/css" href="./asset/main.css" />
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
+  <style type="text/css">
+      #image_container img{
+        width: 100;
+        height: 100;
+      }
+  </style>
 </head>
 
 
@@ -94,8 +100,12 @@
     <br> <br> <br>
     <div id="belowthumnail">
       <label for="" > 썸네일 이미지(대표이미지):</label>
-      <input type="file" name="thumbnail_img" id="thumbnail_img">
+      <input type="file" name="thumbnail_img" id="thumbnail_img" accept=".jpg, .png, .jpge">
       <button type="button" onclick="create_thumbnailUrl()">썸네일 저장</button>
+      <div id="preview2">
+
+      </div>
+
     </div>
     <br>
   
@@ -105,21 +115,24 @@
  
     <div id="editor">
       <p>  상품 소개,상품 상세사이즈를 작성해주세요 </p>
-      <p><br></p>
+      <br>
     </div>
     <br>
     <div id="belowDetail">
       <label for=""> 상세페이지 이미지:</label>
-      <input type="file" name="detail_img" id="detail_img">
+
+      <input multiple='multiple' type="file" name="detail_img" id="detail_img" accept=".mp4, .jpg, .png">
       <button type="button" onclick="create_detailUrl()">상세페이지 저장</button>
+        <div id="preview">
+
+        </div>
+      </div>
     </div>
   </form>
   <br> <br>
   <button type="submit" onclick="postToFirStore()">파이어스토어</button>
 
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-  <!-- Initialize Quill editor -->
   <script>
     var quill = new Quill('#editor', {
       modules: {
@@ -127,16 +140,18 @@
       ['bold', 'italic', 'underline'],
     ]
   },
-
       theme: 'snow'
     });
   </script>
+
+
 
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
   
   <script defer src="./asset/init.js"></script>
+  <script defer src="./asset/query.js"></script>
   <script defer src="./asset/fireStore.js"></script>
 </body>
 
