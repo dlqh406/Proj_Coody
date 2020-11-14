@@ -13,6 +13,7 @@
     <link rel="styleesheet" type="text/css" href="" />
     <link rel="shortcut icon" href="" />
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script
       type="text/javascript"
       src="js/jquery.battatech.excelexport.js"
@@ -34,47 +35,36 @@
 
   <body>
     <div id="wrap">
-      <table id="tblExport">
+      <table
+        id="tbl_account_list"
+        border="1"
+        cellpadding="10"
+        style="border-collapse: collapse"
+      >
         <thead>
           <tr>
-            <th>No</th>
-            <th>Title</th>
-            <th>Type</th>
-            <th>Author</th>
-            <th>URL</th>
+            <th>orderCode</th>
+            <th>uid</th>
+            <th>etc</th>
+            <th>name</th>
+            <th>orderColor</th>
+            <th>orderQuantity</th>
+            <th>orderSize</th>
+            <th>phone</th>
+            <th>productCode</th>
+            <th>productPrice</th>
+            <th>seller</th>
+            <th>address</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>SAP : Study And Programming</td>
-            <td>Blog</td>
-            <td>Serpiko</td>
-            <td>http://serpiko.tistory.com/</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Twitter</td>
-            <td>SNS</td>
-            <td>Obvious, LLC</td>
-            <td>https://www.twitter.com/</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Instagram</td>
-            <td>SNS</td>
-            <td>Kevin Systrom, Mike Krieger</td>
-            <td>https://instagram.com/</td>
-          </tr>
-        </tbody>
       </table>
-
+      <div id="board" style="color: black; margin-top: 50px"></div>
       <a id="btnExport" href="#" download="">
         <button type="button">Export</button>
       </a>
     </div>
 
-    <script type="text/javascript">
+    <script>
       $(document).ready(function () {
         function itoStr($num) {
           $num < 10 ? ($num = "0" + $num) : $num;
@@ -108,5 +98,22 @@
         });
       });
     </script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"
+    ></script>
+
+    <script defer src="../asset/delivery/delivery.js"></script>
+    <script defer src="../asset/init.js"></script>
+    <script defer src="../asset/query.js"></script>
+    <script defer src="../asset/fireStore.js"></script>
   </body>
 </html>
