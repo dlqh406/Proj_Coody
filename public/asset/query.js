@@ -37,7 +37,7 @@ $(document).ready(function (e) {
     var maxSize = 60971520; //20MB
 
     if (fileSize >= maxSize) {
-      alert(" 60메가 파일사이즈 초과 ");
+      alert(" 50메가 파일사이즈 초과 ");
       $("input[type='file']").val(""); //파일 초기화
       return false;
     }
@@ -49,9 +49,11 @@ $(document).ready(function (e) {
     }
     return true;
   }
-
+  var _count = 0;
   function preview(arr) {
     arr.forEach(function (f) {
+      _count += 1;
+      console.log(f);
       //파일명이 길면 파일명...으로 처리
       var fileName = f.name;
       if (fileName.length > 10) {
@@ -59,6 +61,7 @@ $(document).ready(function (e) {
       }
 
       //div에 이미지 추가
+
       var str = '<div style="display: inline-flex; padding: 10px;"><li>';
       str += "<span>" + fileName + "</span><br>";
 

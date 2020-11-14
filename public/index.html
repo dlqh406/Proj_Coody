@@ -22,12 +22,17 @@
   <form method="POST" action="">
     <div>
       <label for="productName"> 상품 명 : </label>
-      <input type="text" id="productName"/>
+      <input type="text" id="productName" required/>
+    </div>
+    <br>
+    <div>
+      <label for="productPrice"> 가격 : </label>
+      <input type="number" id="productPrice" required/>
     </div>
     <br>
     <div>
       <label for="">사이즈 옵션 입력</label>
-      <select name="countSize" id="countSize">
+      <select name="countSize" id="countSize" >
         <option value="0">선택하세요</option>
         <option value="1">1개</option>
         <option value="2">2개</option>
@@ -43,7 +48,7 @@
     <br>
     <div>
       <label for="">색상 옵션 입력</label>
-      <select name="countColor" id="countColor">
+      <select name="countColor" id="countColor" >
         <option value="0">선택하세요</option>
         <option value="1">1개</option>
         <option value="2">2개</option>
@@ -72,8 +77,8 @@
     <br>
     <div>
       <label for="one-dayDelivery"> 당일배송 가능여부 : </label>
-      <input type="radio" id="onedaydeli_can" name="onedaydeli_can" /> 가능
-      <input type="radio" id="onedaydeli_cant" name="onedaydeli_cant" /> 불가능
+      <input type="radio" id="onedaydeli_can" name="onedaydeli_can"  required/> 가능
+      <input type="radio" id="onedaydeli_cant" name="onedaydeli_cant" required/> 불가능
     </div>
     <br>
     <dir style="display:flex; margin:0px; padding: 0px">
@@ -100,7 +105,7 @@
     <br> <br> <br>
     <div id="belowthumnail">
       <label for="" > 썸네일 이미지(대표이미지):</label>
-      <input type="file" name="thumbnail_img" id="thumbnail_img" accept=".jpg, .png, .jpge">
+      <input type="file" name="thumbnail_img" id="thumbnail_img" accept=".jpg, .png, .jpge" required>
       <button type="button" onclick="create_thumbnailUrl()">썸네일 저장</button>
       <div id="preview2">
 
@@ -121,7 +126,7 @@
     <div id="belowDetail">
       <label for=""> 상세페이지 이미지:</label>
 
-      <input multiple='multiple' type="file" name="detail_img" id="detail_img" accept=".mp4, .jpg, .png">
+      <input multiple='multiple' type="file" name="detail_img" id="detail_img" accept=".mp4, .jpg, .png,">
       <button type="button" onclick="create_detailUrl()">상세페이지 저장</button>
         <div id="preview">
 
@@ -133,7 +138,7 @@
   <button type="submit" onclick="postToFirStore()">파이어스토어</button>
 
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script>
+  <script> 
     var quill = new Quill('#editor', {
       modules: {
     toolbar: [
@@ -143,7 +148,9 @@
       theme: 'snow'
     });
   </script>
-
+  <script>
+             
+  </script>
 
 
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>

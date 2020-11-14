@@ -55,15 +55,18 @@ function postToFirStore() {
       .collection("uploaded_product")
       .add({
         productName: $("#productName").val(),
+        price: $("#productPrice").val(),
         thumbnail_img: _thumnailImgList[0],
         detail_img: _detialImgList,
         ODD_can: $("#onedaydeli_can").is(":checked"),
         uploadDate: _uploadDate,
+        soldCount: 0,
         productDecription: _resultQuill,
         sizeList: _sizeList,
         colorList: _colorList,
         style: $("#StyleList option:selected").val(),
         category: $("#category option:selected").val(),
+        seller: "셀러이름을 설정해주세요",
       });
     console.log("uploade completed");
   }
@@ -76,7 +79,8 @@ function create_detailUrl() {
     for (var i = 0; i < this.files.length; i++) {
       if (
         this.files[i].type != "image/png" &&
-        this.files[i].type != "video/mp4"
+        this.files[i].type != "video/mp4" &&
+        this.files[i].type != "image/jpeg"
       ) {
         console.log(this.files[i].type);
         alert(this.files[i].name + "을 jpg/png 파일로 올려주세요 ");
